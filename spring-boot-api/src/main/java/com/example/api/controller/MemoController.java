@@ -42,4 +42,15 @@ public class MemoController {
         memos.add(memo);  // リストに追加
         return memo;       // 作成したメモをレスポンスとして返す
     }
+
+    // ==========================================
+    // GET /memos/{id} — 指定IDのメモを1件取得
+    // ==========================================
+    @GetMapping("/{id}")
+    public Memo getMemoById(@PathVariable long id){
+        return memos.stream()
+            .filter(memo -> memo.getId().equals(id))
+            .findFirst()
+            .orElseThrow(() -> new RuntimeException("Memo not found with id: " + id));
+    }
 }
