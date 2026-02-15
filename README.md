@@ -46,6 +46,7 @@ docker-compose up --build
 | Method | Path | 説明 |
 |--------|------|------|
 | GET | /memos | メモ一覧を取得 |
+| GET | /memos/{id} | 指定IDのメモを1件取得 |
 | POST | /memos | 新しいメモを作成 |
 
 ### リクエスト・レスポンス例
